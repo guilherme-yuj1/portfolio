@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guilherme Yuji — Backend Developer Student</title>
+
+  <!-- Fonte preferida: JetBrains Mono ou Fira Code -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Ícones simples -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta name="color-scheme" content="dark">
+  <style>html {height:100%}</style>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark">
+
+  <!-- Partículas discretas -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Matrix (canvas toggled) -->
+  <canvas id="matrix-canvas" aria-hidden="true"></canvas>
+
+  <main id="app" class="app" role="main">
+    <!-- Boot overlay -->
+    <section id="boot" class="boot" aria-hidden="false" tabindex="-1">
+      <div class="boot-window glass">
+        <pre id="boot-output" class="boot-output" aria-live="polite"></pre>
+        <div class="boot-cursor"></div>
+      </div>
+    </section>
+
+    <!-- Terminal main -->
+    <section id="terminal-section" class="terminal-section" aria-hidden="true">
+      <div class="top-bar">
+        <div class="title">guilherme@yuji: ~</div>
+        <div class="controls">
+          <button id="toggle-sound" title="Toggle typing sound" aria-pressed="false">🔊</button>
+          <button id="clear-btn" title="Clear terminal">🧹</button>
+        </div>
+      </div>
+
+      <div id="terminal" class="terminal glass" role="region" aria-label="Terminal"> 
+        <div id="output" class="output" aria-live="polite"></div>
+
+        <div id="input-line" class="input-line" role="form" aria-label="Terminal input">
+          <span class="prompt"><span class="user">guilherme</span>@<span class="host">yuji</span>:~$</span>
+          <label for="cmdline" class="sr-only">Comando</label>
+          <input id="cmdline" type="text" autocomplete="off" spellcheck="false" aria-autocomplete="list" aria-label="Comando do terminal" />
+        </div>
+      </div>
+
+      <div id="sidebar" class="sidebar glass" role="complementary" aria-hidden="true">
+        <!-- GitHub panel will appear here -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Templates for modals/windows -->
+  <template id="modal-template">
+    <div class="window glass draggable" role="dialog" aria-modal="true" aria-label="Window">
+      <div class="window-header" tabindex="0">
+        <div class="window-title"></div>
+        <div class="window-actions">
+          <button class="minimize" title="Minimize">—</button>
+          <button class="close" title="Close">✕</button>
+        </div>
+      </div>
+      <div class="window-body"></div>
+    </div>
+  </template>
+
+  <!-- Accessible live region for status messages -->
+  <div id="status" class="sr-only" aria-live="polite"></div>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
