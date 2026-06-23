@@ -5,29 +5,32 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Guilherme Yuji — Python & AI Developer Student</title>
 
-  <!-- Fonte preferida: JetBrains Mono ou Fira Code -->
+  <!-- Fontes: JetBrains Mono, Inter -->
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Ícones simples -->
+  <!-- Preconnect para otimização -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <meta name="color-scheme" content="dark">
+  <meta name="description" content="Guilherme Yuji - Python & AI Developer Student. Desenvolvedor focado em Python, Inteligência Artificial e soluções inteligentes.">
+  <meta name="theme-color" content="#0D1117">
+  
   <style>html {height:100%}</style>
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="dark">
 
-  <!-- Partículas discretas -->
+  <!-- Partículas de fundo discretas -->
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-  <!-- Matrix (canvas toggled) -->
+  <!-- Matrix (canvas ativado por comando) -->
   <canvas id="matrix-canvas" aria-hidden="true"></canvas>
 
   <!-- Modal overlay -->
   <div id="modal-overlay" class="modal-overlay" aria-hidden="true"></div>
 
   <main id="app" class="app" role="main">
-    <!-- Boot overlay -->
+    <!-- Boot overlay (inicialização) -->
     <section id="boot" class="boot" aria-hidden="false" tabindex="-1">
       <div class="boot-window glass">
         <pre id="boot-output" class="boot-output" aria-live="polite"></pre>
@@ -35,7 +38,7 @@
       </div>
     </section>
 
-    <!-- Terminal main -->
+    <!-- Terminal principal -->
     <section id="terminal-section" class="terminal-section" aria-hidden="true">
       <div class="top-bar">
         <div class="title">guilherme@yuji: ~</div>
@@ -56,27 +59,27 @@
       </div>
 
       <div id="sidebar" class="sidebar glass" role="complementary" aria-hidden="true">
-        <!-- GitHub panel will appear here -->
+        <!-- GitHub panel será renderizado aqui -->
       </div>
     </section>
 
   </main>
 
-  <!-- Templates for modals/windows -->
+  <!-- Templates para modals/windows -->
   <template id="modal-template">
     <div class="window glass draggable" role="dialog" aria-modal="true" aria-label="Window">
       <div class="window-header" tabindex="0">
         <div class="window-title"></div>
         <div class="window-actions">
-          <button class="minimize" title="Minimize">—</button>
-          <button class="close" title="Close">✕</button>
+          <button class="minimize" title="Minimize" aria-label="Minimize window">—</button>
+          <button class="close" title="Close" aria-label="Close window">✕</button>
         </div>
       </div>
       <div class="window-body"></div>
     </div>
   </template>
 
-  <!-- Accessible live region for status messages -->
+  <!-- Live region para mensagens de status (acessibilidade) -->
   <div id="status" class="sr-only" aria-live="polite"></div>
 
   <script src="script.js" defer></script>
