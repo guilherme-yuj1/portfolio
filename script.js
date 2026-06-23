@@ -10,73 +10,63 @@ const state = {
   lang: 'pt', // 'pt' or 'en'
   user: {
     name: 'Guilherme Yuji',
-    title: { pt: 'Estudante de Desenvolvimento Back-end', en: 'Backend Developer Student' },
+    title: { pt: 'Python & AI Developer Student', en: 'Python & AI Developer Student' },
     description: {
-      pt: 'Sou estudante de desenvolvimento Back-end focado em APIs, bancos de dados e construção de sistemas escaláveis. Estou constantemente aprendendo novas tecnologias e desenvolvendo projetos para expandir minhas habilidades.',
-      en: 'I am a backend development student focused on APIs, databases and building scalable systems. I am constantly learning new technologies and building projects to expand my skillset.'
+      pt: 'Sou estudante focado em Python, Inteligência Artificial e desenvolvimento de soluções inteligentes. Tenho interesse em automação, machine learning, análise de dados e construção de aplicações modernas que utilizam IA para resolver problemas reais.',
+      en: 'I am a student focused on Python, Artificial Intelligence and developing intelligent solutions. I have interest in automation, machine learning, data analysis and building modern applications that use AI to solve real problems.'
     },
     languages: ['Português', 'English']
   },
-  commands: ['help','about','skills','projects','education','github','contact','clear','lang pt','lang en','coffee','sudo hire Guilherme','matrix','whoami','open'],
+  commands: ['help','about','skills','projects','education','github','contact','clear','lang pt','lang en','coffee','sudo hire Guilherme','matrix','whoami','open','ai'],
   skills: {
-    backend: [
-      { id:'java', name:'Java', lvl:'Intermediate', desc:'Programação orientada a objetos, APIs com Spring Boot.', apps:'APIs, microservices', examples:'Spring Boot controllers, services' },
-      { id:'spring', name:'Spring Boot', lvl:'Intermediate', desc:'Framework para construção de APIs e serviços.', apps:'REST APIs, Security, Data', examples:'Spring Data JPA, Spring Security' },
-      { id:'node', name:'Node.js', lvl:'Intermediate', desc:'JavaScript runtime para servidores.', apps:'APIs, servidores em tempo real', examples:'Express apps' },
-      { id:'express', name:'Express', lvl:'Intermediate', desc:'Framework minimalista para Node.js', apps:'APIs REST', examples:'Middlewares, routing' }
+    python: [
+      { id:'python', name:'Python', lvl:'Advanced', desc:'Linguagem versátil para desenvolvimento com IA, automação e análise de dados.', apps:'IA, automação, análise de dados', examples:'Scripts, frameworks de ML' },
+      { id:'fastapi', name:'FastAPI', lvl:'Intermediate', desc:'Framework moderno para APIs rápidas e eficientes.', apps:'APIs REST, aplicações IA', examples:'Endpoints, validação' },
+      { id:'pandas', name:'Pandas', lvl:'Intermediate', desc:'Manipulação e análise de dados estruturados.', apps:'Análise de dados, preparação', examples:'DataFrames, groupby' },
+      { id:'numpy', name:'NumPy', lvl:'Intermediate', desc:'Computação numérica e arrays multidimensionais.', apps:'Processamento de dados, IA', examples:'Operações matriciais' }
     ],
-    database: [
-      { id:'postgres', name:'PostgreSQL', lvl:'Intermediate', desc:'Bancos relacionais e consultas avançadas.', apps:'Sistemas transacionais', examples:'Indices, joins, views' },
-      { id:'mysql', name:'MySQL', lvl:'Basic', desc:'Bancos relacionais populares.', apps:'Pequenas e médias aplicações', examples:'Queries, stored procedures' },
-      { id:'mongodb', name:'MongoDB', lvl:'Basic', desc:'Banco NoSQL orientado a documentos.', apps:'Dados sem esquema rígido', examples:'Schemas com Mongoose' }
+    ai: [
+      { id:'ml', name:'Machine Learning', lvl:'Intermediate', desc:'Desenvolvimento de modelos de aprendizado automático.', apps:'Previsões, classificação', examples:'Regressão, clustering' },
+      { id:'dl', name:'Deep Learning', lvl:'Learning', desc:'Redes neurais profundas para problemas complexos.', apps:'Visão computacional, NLP', examples:'TensorFlow, PyTorch' },
+      { id:'openai', name:'OpenAI API', lvl:'Intermediate', desc:'Integração com modelos de linguagem e IA generativa.', apps:'Chatbots, análise de texto', examples:'GPT integration' },
+      { id:'prompting', name:'Prompt Engineering', lvl:'Intermediate', desc:'Otimização de prompts para melhores respostas de IA.', apps:'Automação inteligente', examples:'Técnicas de prompting' }
     ],
-    devops: [
-      { id:'docker', name:'Docker', lvl:'Basic', desc:'Containerização de aplicações.', apps:'Containers para deploy', examples:'Dockerfiles, docker-compose' },
-      { id:'linux', name:'Linux', lvl:'Intermediate', desc:'Uso de linha de comando e administração básica.', apps:'Servidores, scripting', examples:'Bash, systemctl' },
-      { id:'git', name:'Git', lvl:'Intermediate', desc:'Controle de versão distribuído.', apps:'Fluxos de trabalho Git', examples:'Branches, PRs' }
+    programming: [
+      { id:'java', name:'Java', lvl:'Intermediate', desc:'Linguagem orientada a objetos robusta.', apps:'Aplicações robustas', examples:'POO, padrões' },
+      { id:'javascript', name:'JavaScript', lvl:'Intermediate', desc:'Desenvolvimento full-stack e interatividade web.', apps:'Frontend, automação', examples:'DOM, async/await' },
+      { id:'git', name:'Git', lvl:'Intermediate', desc:'Controle de versão distribuído.', apps:'Fluxos de trabalho', examples:'Branches, commits' },
+      { id:'linux', name:'Linux', lvl:'Intermediate', desc:'Administração de sistemas e linha de comando.', apps:'Servidores, scripting', examples:'Bash, comandos' }
     ],
-    other: [
-      { id:'rest', name:'REST APIs', lvl:'Intermediate', desc:'Design e implementação de APIs RESTful.', apps:'Integração entre serviços', examples:'JSON, status codes' },
-      { id:'jwt', name:'JWT', lvl:'Basic', desc:'Autenticação baseada em tokens.', apps:'Auth stateless', examples:'Bearer tokens' },
-      { id:'arch', name:'Arquitetura de Software', lvl:'Learning', desc:'Padrões e princípios para sistemas escaláveis.', apps:'Microservices, modular design', examples:'DDD, SOLID' }
+    data: [
+      { id:'postgres', name:'PostgreSQL', lvl:'Intermediate', desc:'Bancos de dados relacionais robustos.', apps:'Aplicações IA, analytics', examples:'Queries, indexes' },
+      { id:'mongodb', name:'MongoDB', lvl:'Basic', desc:'Banco NoSQL flexível para dados não estruturados.', apps:'Aplicações modernas', examples:'Documents, schemas' }
     ]
   },
   projects: [
     {
-      id:1, name:'Nexus Inventory',
-      short:'Sistema completo de gerenciamento de estoque empresarial.',
-      description:'Sistema completo de gerenciamento de estoque empresarial com API REST, autenticação e dashboard administrativo.',
-      technologies:['Spring Boot','PostgreSQL','Docker','JWT'],
+      id:1, name:'Landing Page',
+      short:'Landing page moderna com design responsivo e foco em experiência do usuário.',
+      description:'Landing page moderna com design responsivo, otimizada para conversão e experiência do usuário. Demonstra proficiência em design web e implementação de interfaces intuitivas.',
+      url:'https://guilherme-yuj1.github.io/LandingPage/',
+      technologies:['HTML5','CSS3','JavaScript','Responsive Design'],
       features:[
-        'Controle de estoque',
-        'Gestão de produtos',
-        'Relatórios',
-        'Dashboard administrativo',
-        'API REST'
+        'Design responsivo',
+        'Interface moderna',
+        'Otimização UX',
+        'Performance'
       ]
     },
     {
-      id:2, name:'TaskFlow API',
-      short:'API para gerenciamento de tarefas e produtividade.',
-      description:'API focada em produtividade com organização por projetos, autenticação e filtros avançados.',
-      technologies:['Node.js','Express','MongoDB'],
+      id:2, name:'Angry Birds Login',
+      short:'Tela de login temática inspirada no universo Angry Birds, com foco em interface visual e interatividade.',
+      description:'Tela de login criativa e temática inspirada no universo Angry Birds. Demonstra proficiência em design visual, animações e criação de interfaces divertidas e funcionais.',
+      url:'https://guilherme-yuj1.github.io/angry-birds-login/',
+      technologies:['HTML5','CSS3','JavaScript','Animações'],
       features:[
-        'CRUD de tarefas',
-        'Autenticação',
-        'Organização por projetos',
-        'Filtros avançados'
-      ]
-    },
-    {
-      id:3, name:'ChatSync',
-      short:'Sistema de mensagens em tempo real.',
-      description:'Sistema de mensagens em tempo real usando WebSockets, com persistência e status online.',
-      technologies:['Node.js','WebSocket','Redis','Docker'],
-      features:[
-        'Chat em tempo real',
-        'Status online',
-        'Salas privadas',
-        'Persistência de mensagens'
+        'Design temático',
+        'Animações fluidas',
+        'Interface interativa',
+        'Responsivo'
       ]
     }
   ],
@@ -99,6 +89,10 @@ const toggleSoundBtn = document.getElementById('toggle-sound');
 const clearBtn = document.getElementById('clear-btn');
 const bootCursor = document.querySelector('.boot-cursor');
 const modalTemplate = document.getElementById('modal-template');
+const modalOverlay = document.getElementById('modal-overlay');
+
+// Track open modals
+const openModals = new Map();
 
 /* =========================
    UI Helpers
@@ -150,6 +144,39 @@ function clearOutput() {
 }
 
 /* =========================
+   Modal System
+   ========================= */
+function openModal(id) {
+  if (openModals.has(id)) {
+    openModals.get(id).win.focus();
+    return;
+  }
+  modalOverlay.classList.add('active');
+}
+
+function closeModal(id) {
+  if (openModals.has(id)) {
+    const modal = openModals.get(id);
+    modal.win.classList.remove('active');
+    setTimeout(() => {
+      if (modal.win.parentNode) {
+        modal.win.parentNode.removeChild(modal.win);
+      }
+      openModals.delete(id);
+      if (openModals.size === 0) {
+        modalOverlay.classList.remove('active');
+      }
+      inputEl.focus();
+    }, 200);
+  }
+}
+
+function closeAllModals() {
+  const ids = Array.from(openModals.keys());
+  ids.forEach(id => closeModal(id));
+}
+
+/* =========================
    Boot sequence (typing)
    ========================= */
 const bootLines = [
@@ -160,7 +187,7 @@ const bootLines = [
   'Loading GitHub Integration...',
   'System Ready.',
   '',
-  `Welcome to ${state.user.name} Portfolio v1.0`,
+  `Welcome to ${state.user.name} Portfolio v2.0`,
   `Type "help" to begin.`
 ];
 
@@ -269,6 +296,8 @@ inputEl.addEventListener('keydown', (ev) => {
     } else if (matches.length > 1) {
       printLine(matches.join('    '));
     }
+  } else if (ev.key === 'Escape') {
+    closeAllModals();
   } else {
     // sound on keypress
     playKeySound();
@@ -305,6 +334,7 @@ function executeCommand(raw) {
     case 'clear': return (clearOutput(), printLine(t('Terminal limpo.', 'Terminal cleared.')));
     case 'lang': return cmdLang(args.slice(1));
     case 'coffee': return printLine('Developer fuel level: 98%');
+    case 'ai': return printLine('Artificial Intelligence Module Loaded.\n\nStatus:\nREADY\n\nModel:\nGPT Integrated');
     case 'sudo':
       if (args[1] && args[1].toLowerCase() === 'hire' && args[2] && args[2].toLowerCase().startsWith('guilherme')) {
         printLine('Access granted.');
@@ -325,7 +355,6 @@ function executeCommand(raw) {
 function cmdHelp(){
   const lines = [
     t('Comandos disponíveis:','Available commands:'),
-    'help',
     'about',
     'skills',
     'projects',
@@ -336,7 +365,7 @@ function cmdHelp(){
     'lang pt',
     'lang en',
     '',
-    t('Easter eggs: coffee, sudo hire Guilherme, matrix, whoami','Easter eggs: coffee, sudo hire Guilherme, matrix, whoami'),
+    t('Easter eggs: coffee, ai, sudo hire Guilherme, matrix, whoami','Easter eggs: coffee, ai, sudo hire Guilherme, matrix, whoami'),
     t('Use "open <n>" para abrir projeto','Use "open <n>" to open project')
   ];
   lines.forEach(l => printLine(l));
@@ -356,7 +385,13 @@ function cmdSkills(){
     const catLine = document.createElement('div');
     catLine.className = 'line';
     const catTitle = document.createElement('div');
-    catTitle.textContent = category.charAt(0).toUpperCase() + category.slice(1);
+    const categoryLabels = {
+      python: 'Python',
+      ai: 'Artificial Intelligence',
+      programming: 'Programming',
+      data: 'Data'
+    };
+    catTitle.textContent = categoryLabels[category] || category.charAt(0).toUpperCase() + category.slice(1);
     catTitle.style.fontWeight = '600';
     catTitle.style.marginBottom = '6px';
     catLine.appendChild(catTitle);
@@ -390,7 +425,7 @@ function cmdProjects(){
   state.projects.forEach(p => {
     const line = document.createElement('div');
     line.className = 'line';
-    line.innerHTML = `<span class="badge">[${p.id}]</span> <strong>${p.name}</strong> — ${p.short} <span style="color:var(--accent1);margin-left:8px;cursor:pointer" class="cmd-link" data-open="${p.id}">open ${p.id}</span>`;
+    line.innerHTML = `<span class="badge">[${p.id}]</span> <strong>${p.name}</strong> — ${p.short} <span style="color:var(--accent1);margin-left:8px;cursor:pointer" class="cmd-link" data-open="${p.id}">(open)</span>`;
     outputEl.appendChild(line);
   });
 
@@ -413,9 +448,9 @@ function cmdOpen(args){
 function cmdEducation(){
   printLine(t('Timeline de Educação:', 'Education timeline:'));
   const timeline = [
-    { year: '2024', text: t('Início dos estudos em Desenvolvimento Back-end','Started studying Backend Development') },
-    { year: '2025', text: t('Criação dos primeiros projetos completos','Built first full projects') },
-    { year: '2026', text: t('Especialização em APIs e Arquitetura','Specialization in APIs and Architecture') }
+    { year: '2024', text: t('Início dos estudos em Python e IA','Started studying Python and AI') },
+    { year: '2025', text: t('Desenvolvimento de projetos com Machine Learning','Building ML projects') },
+    { year: '2026', text: t('Especialização em Inteligência Artificial aplicada','Specialization in Applied AI') }
   ];
   timeline.forEach(item=>{
     const el = document.createElement('div');
@@ -431,13 +466,25 @@ async function cmdGithub(){
   sidebarEl.setAttribute('aria-hidden','false');
   sidebarEl.style.display = 'flex';
 
+  // Add close button
+  const closeBtn = document.createElement('button');
+  closeBtn.className = 'sidebar-close';
+  closeBtn.textContent = '✕';
+  closeBtn.setAttribute('title', t('Fechar', 'Close'));
+  closeBtn.addEventListener('click', ()=> {
+    sidebarEl.style.display = 'none';
+    sidebarEl.setAttribute('aria-hidden','true');
+    inputEl.focus();
+  });
+  sidebarEl.appendChild(closeBtn);
+
   const card = document.createElement('div');
   card.className = 'gh-card';
   const avatar = document.createElement('div');
   avatar.className = 'gh-avatar';
   avatar.textContent = state.user.name.split(' ').map(s=>s[0]).slice(0,2).join('');
   const info = document.createElement('div');
-  info.innerHTML = `<div class="gh-name">${state.user.name}</div><div class="gh-bio">${state.user.title[state.lang]}</div><div style="margin-top:8px"><a class="cmd-link" href="https://github.com/${state.githubUsername}" target="_blank" rel="noopener">GitHub: ${state.githubUsername}</a></div>`;
+  info.innerHTML = `<div class="gh-name">${state.user.name}</div><div class="gh-bio">${state.user.title[state.lang]}</div><div style="margin-top:8px"><a class="cmd-link" href="https://github.com/${state.githubUsername}" target="_blank" rel="noopener">Visit Profile</a></div>`;
   card.appendChild(avatar);
   card.appendChild(info);
   sidebarEl.appendChild(card);
@@ -449,7 +496,7 @@ async function cmdGithub(){
     const data = await res.json();
     const stats = document.createElement('div');
     stats.style.marginTop = '12px';
-    stats.innerHTML = `<div style="display:flex;gap:8px"><div class="badge">Repos: ${data.public_repos}</div><div class="badge">Followers: ${data.followers}</div></div><div style="margin-top:8px;color:#9aa6b2;font-size:13px">${data.bio || ''}</div>`;
+    stats.innerHTML = `<div style="display:flex;gap:8px"><div class="badge">Repos: ${data.public_repos}</div><div class="badge">Followers: ${data.followers}</div></div><div style="margin-top:8px;color:#9aa6b2;font-size:12px">${data.bio || ''}</div>`;
     sidebarEl.appendChild(stats);
 
     // top languages / sample repos (simplified)
@@ -477,15 +524,16 @@ async function cmdGithub(){
 
 /* Contact form modal */
 function cmdContact(){
-  const modal = createWindow(t('Contact','Contato'));
+  const modalId = 'contact-' + Date.now();
+  const modal = createWindow(t('Contact','Contato'), modalId);
   const form = document.createElement('form');
   form.innerHTML = `
     <div style="font-family:var(--mono);margin-bottom:8px">${t('Envie uma mensagem para Guilherme','Send a message to Guilherme')}</div>
-    <label style="display:block;margin-bottom:6px"><span class="sr-only">Name</span><input name="name" placeholder="${t('Nome','Name')}" required style="width:100%;padding:8px;border-radius:6px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)"></label>
-    <label style="display:block;margin-bottom:6px"><span class="sr-only">Email</span><input name="email" placeholder="${t('Email','Email')}" type="email" required style="width:100%;padding:8px;border-radius:6px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)"></label>
-    <label style="display:block;margin-bottom:8px"><span class="sr-only">Message</span><textarea name="message" placeholder="${t('Mensagem','Message')}" required style="width:100%;height:120px;padding:8px;border-radius:6px;background:transparent;border:1px solid rgba(255,255,255,0.04);color:var(--text)"></textarea></label>
+    <label style="display:block;margin-bottom:6px"><span class="sr-only">Name</span><input name="name" placeholder="${t('Nome','Name')}" required style="width:100%;padding:8px;border-radius:6px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);color:var(--text);font-family:var(--mono);font-size:13px"></label>
+    <label style="display:block;margin-bottom:6px"><span class="sr-only">Email</span><input name="email" placeholder="${t('Email','Email')}" type="email" required style="width:100%;padding:8px;border-radius:6px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);color:var(--text);font-family:var(--mono);font-size:13px"></label>
+    <label style="display:block;margin-bottom:8px"><span class="sr-only">Message</span><textarea name="message" placeholder="${t('Mensagem','Message')}" required style="width:100%;height:120px;padding:8px;border-radius:6px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);color:var(--text);font-family:var(--mono);font-size:13px;resize:none"></textarea></label>
     <div style="display:flex;gap:8px;justify-content:flex-end">
-      <button type="submit" style="padding:8px 12px;border-radius:8px;background:var(--accent1);border:0;color:var(--panel);font-weight:600">${t('Send Message','Enviar')}</button>
+      <button type="submit" style="padding:8px 12px;border-radius:8px;background:var(--accent1);border:0;color:var(--panel);font-weight:600;cursor:pointer">${t('Enviar','Send Message')}</button>
     </div>
   `;
   form.addEventListener('submit', (e)=>{
@@ -517,15 +565,16 @@ function showFormStatus(mod, text){
 
 /* Skills modal */
 function openSkillModal(skill){
-  const modal = createWindow(skill.name);
+  const modalId = 'skill-' + skill.id + '-' + Date.now();
+  const modal = createWindow(skill.name, modalId);
   const body = document.createElement('div');
   body.innerHTML = `
     <div style="font-family:var(--mono);margin-bottom:8px"><strong>${skill.name}</strong> — ${skill.lvl}</div>
     <div style="color:#b9c1cc;margin-bottom:8px">${skill.desc}</div>
-    <div style="font-weight:600;margin-bottom:6px">Aplicações</div>
+    <div style="font-weight:600;margin-bottom:6px">${t('Aplicações','Applications')}</div>
     <div style="margin-bottom:8px">${skill.apps}</div>
-    <div style="font-weight:600;margin-bottom:6px">Exemplos</div>
-    <pre style="background:rgba(255,255,255,0.02);padding:8px;border-radius:6px;font-family:var(--mono);font-size:13px">${skill.examples}</pre>
+    <div style="font-weight:600;margin-bottom:6px">${t('Exemplos','Examples')}</div>
+    <pre style="background:rgba(255,255,255,0.02);padding:8px;border-radius:6px;font-family:var(--mono);font-size:13px;overflow:auto">${skill.examples}</pre>
   `;
   modal.body.appendChild(body);
 }
@@ -534,29 +583,41 @@ function openSkillModal(skill){
 function openProjectModal(id){
   const p = state.projects.find(x=>x.id===id);
   if(!p) return printLine(t('Projeto não encontrado','Project not found'));
-  const modal = createWindow(p.name);
+  const modalId = 'project-' + p.id + '-' + Date.now();
+  const modal = createWindow(p.name, modalId);
   const body = document.createElement('div');
   body.innerHTML = `
     <div style="font-weight:600;margin-bottom:8px">${p.short}</div>
     <div class="project-snapshot" aria-hidden="true">${p.name} — preview</div>
     <div style="margin-top:12px;color:#b9c1cc">${p.description}</div>
-    <div style="margin-top:12px;font-weight:600">Tecnologias</div>
-    <div style="display:flex;gap:8px;margin-top:6px">${p.technologies.map(t=>`<span class="badge">${t}</span>`).join('')}</div>
-    <div style="margin-top:12px;font-weight:600">Recursos</div>
+    <div style="margin-top:12px;font-weight:600">${t('Tecnologias','Technologies')}</div>
+    <div style="display:flex;gap:8px;margin-top:6px;flex-wrap:wrap">${p.technologies.map(t=>`<span class="badge">${t}</span>`).join('')}</div>
+    <div style="margin-top:12px;font-weight:600">${t('Recursos','Features')}</div>
     <ul style="margin-top:6px">${p.features.map(f=>`<li>${f}</li>`).join('')}</ul>
-    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px"><a class="cmd-link" href="https://github.com/${state.githubUsername}" target="_blank" rel="noopener">GitHub</a></div>
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:12px"><a class="cmd-link" href="${p.url}" target="_blank" rel="noopener">${t('Visit Project','Visitar Projeto')}</a><a class="cmd-link" href="${p.url}" target="_blank" rel="noopener">${t('Open in New Tab','Abrir em Nova Aba')}</a></div>
   `;
   modal.body.appendChild(body);
 }
 
 /* Create window (modal) helper: draggable */
-function createWindow(title = 'Window'){
+function createWindow(title = 'Window', id = null){
+  const windowId = id || 'window-' + Date.now();
   const tpl = modalTemplate.content.cloneNode(true);
   const win = tpl.querySelector('.window');
+  win.id = windowId;
   const header = win.querySelector('.window-header');
   win.querySelector('.window-title').textContent = title;
   const body = win.querySelector('.window-body');
   document.body.appendChild(win);
+  
+  // Track modal
+  openModals.set(windowId, { win, header, body });
+
+  // Activate modal after a tick
+  setTimeout(() => {
+    win.classList.add('active');
+    openModal(windowId);
+  }, 10);
 
   // make draggable
   let isDown = false, startX=0, startY=0, origX=0, origY=0;
@@ -582,18 +643,45 @@ function createWindow(title = 'Window'){
     header.releasePointerCapture(e.pointerId);
   });
 
-  // actions
-  win.querySelector('.close').addEventListener('click', ()=> win.remove());
+  // Close button
+  const closeBtn = win.querySelector('.close');
+  closeBtn.addEventListener('click', (e)=> {
+    e.preventDefault();
+    e.stopPropagation();
+    closeModal(windowId);
+  });
+
+  // Minimize button
   win.querySelector('.minimize').addEventListener('click', ()=> {
     if (win.style.height && win.style.height!=='auto') {
-      win.style.height = ''; win.style.overflow = 'hidden';
+      win.style.height = ''; win.style.overflow = 'visible';
     } else {
       win.style.height = '40px'; win.style.overflow = 'hidden';
     }
   });
 
-  // return references
-  document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape') win.remove() });
+  // Close on ESC key
+  const escapeHandler = (e)=> { 
+    if (e.key === 'Escape' && openModals.has(windowId)) {
+      e.preventDefault();
+      closeModal(windowId);
+    }
+  };
+  document.addEventListener('keydown', escapeHandler);
+
+  // Close on outside click
+  modalOverlay.addEventListener('click', (e)=> {
+    if (e.target === modalOverlay && openModals.has(windowId)) {
+      closeModal(windowId);
+    }
+  });
+
+  // Store cleanup function
+  const cleanup = () => {
+    document.removeEventListener('keydown', escapeHandler);
+  };
+  win._cleanup = cleanup;
+
   return { win, header, body };
 }
 
@@ -606,6 +694,7 @@ function toggleMatrix(){
   matrixActive = !matrixActive;
   if (matrixActive) startMatrix();
   else stopMatrix();
+  printLine(matrixActive ? 'Matrix mode: ON' : 'Matrix mode: OFF');
 }
 
 function startMatrix(){
@@ -651,14 +740,15 @@ function stopMatrix(){
   function resize(){ w = c.width = innerWidth; h = c.height = innerHeight; init(); }
   function init(){
     particles = [];
-    for (let i=0;i<60;i++){
+    for (let i=0;i<80;i++){
       particles.push({
         x: Math.random()*w,
         y: Math.random()*h,
-        r: Math.random()*1.6 + 0.4,
-        vx: (Math.random()-0.5)*0.3,
-        vy: (Math.random()-0.5)*0.3,
-        hue: 200 + Math.random()*80
+        r: Math.random()*1.8 + 0.3,
+        vx: (Math.random()-0.5)*0.25,
+        vy: (Math.random()-0.5)*0.25,
+        hue: 180 + Math.random()*90,
+        life: Math.random() * 0.8 + 0.2
       });
     }
   }
@@ -671,7 +761,7 @@ function stopMatrix(){
       if (p.y<0) p.y = h;
       if (p.y>h) p.y = 0;
       ctx.beginPath();
-      ctx.fillStyle = `rgba(88,166,255,${0.06 + p.r*0.06})`;
+      ctx.fillStyle = `hsla(${p.hue}, 100%, 50%, ${(0.04 + p.r*0.06) * p.life})`;
       ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
       ctx.fill();
     });
@@ -706,7 +796,13 @@ clearBtn.addEventListener('click', ()=> clearOutput());
 /* =========================
    Accessibility and focus considerations
    ========================= */
-document.addEventListener('click', ()=> inputEl.focus());
+document.addEventListener('click', (e)=> {
+  // Only focus input if clicking on terminal or sidebar areas
+  if (e.target.closest('.terminal') || e.target.closest('.output')) {
+    inputEl.focus();
+  }
+});
+
 document.addEventListener('keydown', (e)=> {
   // quick focus ctrl+/
   if ((e.ctrlKey || e.metaKey) && e.key === '/') {
@@ -732,9 +828,8 @@ window.addEventListener('load', ()=>{
 });
 
 /* =========================
-   Small helper: openProjectModal via command links that may be printed later
+   Exported globals for inline handlers
    ========================= */
-/* Exported for inline click handlers */
 window.openProjectModal = openProjectModal;
 window.openSkillModal = openSkillModal;
 
