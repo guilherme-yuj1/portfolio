@@ -471,7 +471,9 @@ async function cmdGithub(){
   closeBtn.className = 'sidebar-close';
   closeBtn.textContent = '✕';
   closeBtn.setAttribute('title', t('Fechar', 'Close'));
-  closeBtn.addEventListener('click', ()=> {
+  closeBtn.addEventListener('click', (e)=> {
+    e.preventDefault();
+    e.stopPropagation();
     sidebarEl.style.display = 'none';
     sidebarEl.setAttribute('aria-hidden','true');
     inputEl.focus();
@@ -643,24 +645,30 @@ function createWindow(title = 'Window', id = null){
     header.releasePointerCapture(e.pointerId);
   });
 
-  // Close button
+  // Close button - FIXED with proper event handling
   const closeBtn = win.querySelector('.close');
-  closeBtn.addEventListener('click', (e)=> {
-    e.preventDefault();
-    e.stopPropagation();
-    closeModal(windowId);
-  });
+  if (closeBtn) {
+    closeBtn.addEventListener('click', (e)=> {
+      e.preventDefault();
+      e.stopPropagation();
+      closeModal(windowId);
+      return false;
+    });
+  }
 
   // Minimize button
-  win.querySelector('.minimize').addEventListener('click', ()=> {
-    if (win.style.height && win.style.height!=='auto') {
-      win.style.height = ''; win.style.overflow = 'visible';
-    } else {
-      win.style.height = '40px'; win.style.overflow = 'hidden';
-    }
-  });
+  const minimizeBtn = win.querySelector('.minimize');
+  if (minimizeBtn) {
+    minimizeBtn.addEventListener('click', ()=> {
+      if (win.style.height && win.style.height!=='auto') {
+        win.style.height = ''; win.style.overflow = 'visible';
+      } else {
+        win.style.height = '40px'; win.style.overflow = 'hidden';
+      }
+    });
+  }
 
-  // Close on ESC key
+  // Close on ESC key (only for this specific window)
   const escapeHandler = (e)=> { 
     if (e.key === 'Escape' && openModals.has(windowId)) {
       e.preventDefault();
@@ -669,18 +677,21 @@ function createWindow(title = 'Window', id = null){
   };
   document.addEventListener('keydown', escapeHandler);
 
-  // Close on outside click
-  modalOverlay.addEventListener('click', (e)=> {
+  // Close on outside click (overlay click)
+  const overlayClickHandler = (e)=> {
     if (e.target === modalOverlay && openModals.has(windowId)) {
+      e.preventDefault();
+      e.stopPropagation();
       closeModal(windowId);
     }
-  });
-
-  // Store cleanup function
-  const cleanup = () => {
-    document.removeEventListener('keydown', escapeHandler);
   };
-  win._cleanup = cleanup;
+  modalOverlay.addEventListener('click', overlayClickHandler);
+
+  // Store cleanup handlers
+  win._handlers = {
+    escapeHandler,
+    overlayClickHandler
+  };
 
   return { win, header, body };
 }
